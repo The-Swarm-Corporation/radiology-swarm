@@ -99,18 +99,8 @@ OPENAI_API_KEY=your_api_key_here
 MODEL_NAME=gpt-4o
 MAX_RETRIES=2
 VERBOSE=True
+WORKSPACE_DIR="agent_workspace"
 ```
-
-## 📚 Documentation
-
-Full documentation is available at [docs.radiology-swarm.com](https://docs.radiology-swarm.com)
-
-### Key Sections:
-- [Installation Guide](https://docs.radiology-swarm.com/installation)
-- [API Reference](https://docs.radiology-swarm.com/api)
-- [Best Practices](https://docs.radiology-swarm.com/best-practices)
-- [Security & Compliance](https://docs.radiology-swarm.com/security)
-
 ## 🔐 Security & Compliance
 
 - HIPAA-compliant data handling
@@ -158,10 +148,10 @@ Enterprise support, custom deployment, and training available. Contact us at [en
 
 Current stable version: 1.0.0
 - [x] Production ready
-- [x] CI/CD pipeline
-- [x] Automated testing
-- [x] Documentation
-- [x] Enterprise support
+- [ ] CI/CD pipeline
+- [ ] Automated testing
+- [ ] Documentation
+- [ ] Enterprise support
 
 ## 🙏 Acknowledgments
 
