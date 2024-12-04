@@ -1,4 +1,3 @@
-
 import os
 from swarms import Agent, SequentialWorkflow, create_file_in_folder
 from swarm_models import GPT4VisionAPI, OpenAIChat
@@ -6,13 +5,13 @@ from swarm_models import GPT4VisionAPI, OpenAIChat
 model = GPT4VisionAPI(
     openai_api_key=os.getenv("OPENAI_API_KEY"),
     max_tokens=4000,
-    model_name="gpt-4o"
+    model_name="gpt-4o",
 )
 
 llm_model = OpenAIChat(
     openai_api_key=os.getenv("OPENAI_API_KEY"),
     max_tokens=4000,
-    model_name="gpt-4o"
+    model_name="gpt-4o",
 )
 
 # Initialize specialized radiology agents
@@ -211,28 +210,29 @@ treatment_specialist = Agent(
 )
 
 agents = [
-    image_analysis_specialist, 
-    radiological_diagnostician, 
-    intervention_planner, 
+    image_analysis_specialist,
+    radiological_diagnostician,
+    intervention_planner,
     quality_assurance_specialist,
 ]
 
 
-
-def run_diagnosis_agents(task: str, img: str,):
+def run_diagnosis_agents(
+    task: str,
+    img: str,
+):
     radiology_swarm = SequentialWorkflow(
-        name = "radiology-swarm",
+        name="radiology-swarm",
         description="swarm of autonomous radiologist agents",
-        agents = agents,
+        agents=agents,
     )
-    
+
     diagnosis = radiology_swarm.run(task=task, img=img)
-    
-    output = treatment_specialist.run(f"From diagnosis swarm: {diagnosis} \n Your Task is: {task} ")
-    
+
+    output = treatment_specialist.run(
+        f"From diagnosis swarm: {diagnosis} \n Your Task is: {task} "
+    )
+
     create_file_in_folder("analyses", "radiology_analsis.md", output)
-    
+
     return output
-
-
-
