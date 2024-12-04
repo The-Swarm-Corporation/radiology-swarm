@@ -68,25 +68,11 @@ pip install radiology-swarm
 ### Basic Usage
 
 ```python
-from radiology_swarm.main import run_diagnosis_agents
+from radiology_swarm import run_diagnosis_agents
 
-# Simple analysis with default parameters
-result = run_diagnosis_agents(
-    prompt="Analyze this image and provide an analysis and then a treatment",
-    img="xray.jpeg"
-)
-
-# Advanced usage with custom parameters
-result = run_diagnosis_agents(
-    prompt="Detailed chest X-ray analysis with focus on cardiac silhouette",
-    img="chest_xray.dcm",
-    modality="xray",
-    priority="urgent",
-    previous_studies=["previous_xray.dcm"],
-    clinical_context={
-        "symptoms": ["chest pain", "shortness of breath"],
-        "history": "Previous MI"
-    }
+run_diagnosis_agents(
+    "Analyze this image and provide an analysis and then a treatment",
+    img="xray.jpeg",
 )
 ```
 
