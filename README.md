@@ -25,6 +25,46 @@ A powerful, enterprise-grade multi-agent system for advanced radiological analys
 
 ## 🏗️ Architecture
 
+```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#ffffff',
+    'primaryTextColor': '#ff0000',
+    'primaryBorderColor': '#ff0000',
+    'lineColor': '#ff0000',
+    'secondaryColor': '#ffffff',
+    'tertiaryColor': '#ffffff'
+  }
+}}%%
+
+flowchart TD
+    classDef default fill:#fff,stroke:#ff0000,stroke-width:2px,color:#ff0000
+    classDef input fill:#fff,stroke:#ff0000,stroke-width:2px,color:#ff0000
+    classDef agent fill:#fff,stroke:#ff0000,stroke-width:2px,color:#ff0000
+    classDef output fill:#fff,stroke:#ff0000,stroke-width:2px,color:#ff0000
+
+    Input[("Input\n(task + image)")]
+    
+    subgraph Sequential_Workflow["Sequential Workflow"]
+        A1["Image Analysis\nSpecialist"]
+        A2["Radiological\nDiagnostician"]
+        A3["Intervention\nPlanner"]
+        A4["Quality Assurance\nSpecialist"]
+        
+        A1 --> A2
+        A2 --> A3
+        A3 --> A4
+    end
+    
+    Input --> Sequential_Workflow
+    Sequential_Workflow --> Diagnosis["Consolidated\nDiagnosis"]
+    Diagnosis --> Treatment["Treatment\nSpecialist"]
+    Treatment --> Output["Output\n(radiology_analysis.md)"]
+
+    style Sequential_Workflow fill:#fff,stroke:#ff0000,stroke-width:2px
+```
+
 The system consists of six specialized agents:
 
 1. **Image Analysis Specialist**
