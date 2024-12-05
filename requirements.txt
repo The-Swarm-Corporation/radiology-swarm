@@ -1,2 +1,4 @@
 swarms
 swarm-models
+pydicom
+nibabel

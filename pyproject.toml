@@ -25,6 +25,8 @@ classifiers = [
 python = "^3.10"
 swarms = "*"
 swarm-models = "*"
+pydicom = "*"
+nibabel = "*"
 
 
 [tool.poetry.group.lint.dependencies]

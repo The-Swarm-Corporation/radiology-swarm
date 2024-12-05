@@ -10,7 +10,9 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+agent_workspace
 build/
+temp_converted
 develop-eggs/
 dist/
 downloads/

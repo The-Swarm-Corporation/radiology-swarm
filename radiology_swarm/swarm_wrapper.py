@@ -1,5 +1,5 @@
 import os
-from swarms import Agent, SequentialWorkflow, create_file_in_folder
+from swarms import Agent
 from swarm_models import GPT4VisionAPI, OpenAIChat
 
 model = GPT4VisionAPI(
@@ -217,22 +217,48 @@ agents = [
 ]
 
 
-def run_diagnosis_agents(
-    task: str,
-    img: str,
-):
-    radiology_swarm = SequentialWorkflow(
-        name="radiology-swarm",
-        description="swarm of autonomous radiologist agents",
-        agents=agents,
-    )
+# def run_diagnosis_agents(
+#     task: str,
+#     img: str,
+#     output_folder_name: str = "reports",
+#     output_file_name: str = "xray_analysis.md",
+# ):
 
-    diagnosis = radiology_swarm.run(task=task, img=img)
+#     try:
+#         # Convert image to JPEG if needed
+#         if not img.lower().endswith((".jpg", ".jpeg")):
+#             # Initialize converter
+#             converter = MedicalImageConverter(output_dir="temp_converted")
 
-    output = treatment_specialist.run(
-        f"From diagnosis swarm: {diagnosis} \n Your Task is: {task} "
-    )
+#             # Log the conversion process
+#             logger.info(f"Converted image to JPEG: {img}")
 
-    create_file_in_folder("analyses", "radiology_analsis.md", output)
+#             img = converter.convert_to_jpeg(img)
 
-    return output
+#         # Run the radiology swarm with converted image
+#         radiology_swarm = SequentialWorkflow(
+#             name="radiology-swarm",
+#             description="swarm of autonomous radiologist agents",
+#             agents=agents,
+#         )
+
+#         diagnosis = radiology_swarm.run(task=task, img=img)
+
+#         # Log the diagnosis result
+
+#         output = treatment_specialist.run(
+#             f"From diagnosis swarm: {diagnosis} \n Your Task is: {task} "
+#         )
+
+#         # Log the output creation
+#         logger.info("Created radiology analysis output")
+
+#         create_file_in_folder(
+#             output_folder_name, output_file_name, output
+#         )
+
+#         return output
+
+#     except Exception as e:
+#         logger.error(f"Error in diagnosis pipeline: {str(e)}")
+#         raise
