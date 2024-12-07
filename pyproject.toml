@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "radiology-swarm"
-version = "0.0.1"
+version = "0.0.3"
 description = "RadiologySwarm - TGSC"
 license = "MIT"
 authors = ["Kye Gomez <kye@apac.ai>"]
@@ -27,6 +27,8 @@ swarms = "*"
 swarm-models = "*"
 pydicom = "*"
 nibabel = "*"
+pydantic = "*"
+loguru = "*"
 
 
 [tool.poetry.group.lint.dependencies]

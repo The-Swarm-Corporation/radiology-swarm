@@ -170,7 +170,8 @@ Enterprise support, custom deployment, and training available. Contact us at [en
 ## 🚨 Status
 
 Current stable version: 1.0.0
-- [x] Production ready
+- [ ] Add support for dcm, and other data types
+- [ ] Implement Multi-Modal RAG for image processing maybe chromadb 
 - [ ] CI/CD pipeline
 - [ ] Automated testing
 - [ ] Documentation

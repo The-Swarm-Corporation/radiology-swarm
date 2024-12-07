@@ -199,7 +199,9 @@ treatment_specialist = Agent(
     - Quality of life impact
     - Treatment response assessment criteria
     
-    Always integrate findings with other clinical data to ensure comprehensive care planning while adhering to radiation safety principles and maintaining ALARA (As Low As Reasonably Achievable) standards.""",
+    Always integrate findings with other clinical data to ensure comprehensive care planning while adhering to radiation safety principles and maintaining ALARA (As Low As Reasonably Achievable) standards.
+    Ensure your outputs are extremely lengthy and prodvide and extremely detailed and extensive report. Covering various possible treatment plans
+    """,
     llm=llm_model,
     max_loops=1,
     saved_state_path="treatment_specialist.json",
@@ -207,6 +209,7 @@ treatment_specialist = Agent(
     retry_attempts=2,
     context_length=200000,
     output_type="string",
+    max_tokens=16000
 )
 
 agents = [
