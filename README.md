@@ -122,9 +122,6 @@ Create a `.env` file in your project root:
 
 ```env
 OPENAI_API_KEY=your_api_key_here
-MODEL_NAME=gpt-4o
-MAX_RETRIES=2
-VERBOSE=True
 WORKSPACE_DIR="agent_workspace"
 ```
 ## 🔐 Security & Compliance
